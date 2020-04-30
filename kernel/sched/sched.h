@@ -2255,3 +2255,13 @@ static inline void account_reset_rq(struct rq *rq)
 	rq->prev_steal_time_rq = 0;
 #endif
 }
+<<<<<<< HEAD
+=======
+
+/*
+ * task_may_not_preempt - check whether a task may not be preemptible soon
+ */
+extern bool task_may_not_preempt(struct task_struct *task, int cpu);
+
+#endif /* CONFIG_SCHED_QHMP */
+>>>>>>> d2ede7b79042c60fb3dccb4dc1b90e4f5f4e8181
