@@ -2483,7 +2483,7 @@ cifs_set_cifscreds(struct smb_vol *vol, struct cifs_ses *ses)
 			rc = -ENOMEM;
 			kfree(vol->username);
 			vol->username = NULL;
-			kzfree(vol->password);
+			kfree(vol->password);
 			vol->password = NULL;
 			goto out_key_put;
 		}

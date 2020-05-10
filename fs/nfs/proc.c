@@ -612,10 +612,8 @@ static int nfs_write_done(struct rpc_task *task, struct nfs_pgio_header *hdr)
 {
 	struct inode *inode = hdr->inode;
 
-	if (task->tk_status >= 0) {
-		hdr->res.count = hdr->args.count;
+	if (task->tk_status >= 0)
 		nfs_post_op_update_inode_force_wcc(inode, hdr->res.fattr);
-	}
 	return 0;
 }
 

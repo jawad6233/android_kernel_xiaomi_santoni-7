@@ -387,10 +387,8 @@ static int edac_create_csrow_object(struct mem_ctl_info *mci,
 		 dev_name(&csrow->dev));
 
 	err = device_add(&csrow->dev);
-	if (err < 0) {
-		put_device(&csrow->dev);
+	if (err < 0)
 		return err;
-	}
 
 	for (chan = 0; chan < csrow->nr_channels; chan++) {
 		/* Only expose populated DIMMs */
